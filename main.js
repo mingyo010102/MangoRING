@@ -1,5 +1,24 @@
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Apply saved theme on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.classList.add(savedTheme);
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+    } else {
+        localStorage.removeItem('theme');
+    }
+});
+
 const startBtn = document.getElementById('start-btn');
 const questionScreen = document.getElementById('question-screen');
+// ... (rest of the file remains the same)
 const startScreen = document.getElementById('start-screen');
 const resultScreen = document.getElementById('result-screen');
 const questionEl = document.getElementById('question');

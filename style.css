@@ -1,15 +1,35 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --app-bg-color: white;
+    --button-bg-color: #007bff;
+    --button-text-color: white;
+    --button-hover-bg-color: #0056b3;
+}
+
+body.dark-mode {
+    --bg-color: #333;
+    --text-color: #f0f0f0;
+    --app-bg-color: #444;
+    --button-bg-color: #555;
+    --button-hover-bg-color: #777;
+}
+
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #app {
-    background-color: white;
+    background-color: var(--app-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -21,8 +41,8 @@ body {
 }
 
 button {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -31,11 +51,17 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--button-hover-bg-color);
 }
 
 #answers button {
     display: block;
     margin: 10px auto;
     width: 100%;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
