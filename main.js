@@ -24,6 +24,7 @@ const resultScreen = document.getElementById('result-screen');
 const questionEl = document.getElementById('question');
 const answersEl = document.getElementById('answers');
 const resultEl = document.getElementById('result');
+const contactFormScreen = document.getElementById('contact-form-screen'); // Add this line
 
 let currentQuestionIndex = 0;
 let scores = {
@@ -109,4 +110,16 @@ function showResult() {
         resultText = '당신은 모험심이 강한 영혼입니다! 항상 새로운 경험을 추구하며 미지의 것을 두려워하지 않습니다.';
     }
     resultEl.innerText = resultText;
+
+    // Add contact button
+    const contactButton = document.createElement('button');
+    contactButton.innerText = '제휴 문의';
+    contactButton.addEventListener('click', showContactForm);
+    resultScreen.appendChild(contactButton);
 }
+
+function showContactForm() {
+    resultScreen.classList.add('hide');
+    contactFormScreen.classList.remove('hide');
+}
+

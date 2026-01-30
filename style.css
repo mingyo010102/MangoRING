@@ -65,3 +65,50 @@ button:hover {
     top: 20px;
     right: 20px;
 }
+
+#contact-form-screen {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#contact-form-screen h2, #contact-form-screen p {
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 22px); /* Padding + Border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--button-bg-color);
+    outline: none;
+}
+
+#contact-form-screen button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
